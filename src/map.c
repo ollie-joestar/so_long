@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:05:48 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 12:18:26 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:19:15 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ static size_t	file_line_num(t_data *data)
 	if (fd < 0)
 		annihilate (data, "Error\nFailed to open map!\n", 1);
 	line_num = 0;
-	temp = get_next_line(fd, data->errno);
+	temp = get_next_line(fd, &data->errno);
 	while (temp)
 	{
 		line_num++;
-		if (*data->errno == -1)
+		if (data->errno == -1)
 			annihilate (data, "Error\nFailed to get next line!\n", 1);
 		free(temp);
-		temp = get_next_line(fd, data->errno);
+		temp = get_next_line(fd, &data->errno);
 	}
 	if (-1 == close(fd))
 		annihilate (data, "Error\nFailed to close map!\n", 1);
+	if (data->errno == -1)
+		annihilate (data, "Error\nFailed to get next line!\n", 1);
 	return (line_num);
 }
 
@@ -53,26 +55,20 @@ static void	ft_parsemap(t_data *data)
 	if (map == NULL)
 		annihilate (data, "Error\nFailed to alloc map!\n", 1);
 	x = 0;
-	line = get_next_line(fd, data->errno);
+	line = get_next_line(fd, &data->errno);
 	while (line)
 	{
 		map[x++] = line;
-		line = get_next_line(fd, data->errno);
+		line = get_next_line(fd, &data->errno);
 	}
 	if (-1 == close(fd))
 		annihilate (data, "Error\nFailed to close map!\n", 1);
-	if (!(data->map) || !(data->map[0]) || *data->errno == -1)
+	if (!(data->map) || !(data->map[0]) || data->errno == -1)
 		annihilate(data, "Error\nFailed to parse the map gnl\n", 1);
 }
 
 void	load_map(t_data *data)
 {
-	int	*errno;
-
-	errno = ft_calloc(1, sizeof(int));
-	if (!errno)
-		annihilate(data, "Error\nFailed to alloc errno\n", 1);
-	data->errno = errno;
 	check_extension(data);
 	ft_parsemap(data);
 	data->win_width = ft_linelen(data->map[0]) - 1;

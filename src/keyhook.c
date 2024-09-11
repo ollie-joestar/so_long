@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 15:45:19 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 10:47:54 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:27:00 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ static void	move_right(t_data *data)
 	if (data->map[data->player->y][data->player->x + 1] != '1')
 	{
 		if (data->map[data->player->y][data->player->x + 1] == 'C')
-		{
 			data->coins->coincheck -= 1;
-			ft_printf("Coins left: %d\n", data->coins->coincheck);
-		}
 		data->map[data->player->y][data->player->x] = '0';
 		data->map[data->player->y][data->player->x + 1] = 'P';
 		data->player->x += 1;
@@ -37,10 +34,7 @@ static void	move_left(t_data *data)
 	if (data->map[data->player->y][data->player->x - 1] != '1')
 	{
 		if (data->map[data->player->y][data->player->x - 1] == 'C')
-		{
 			data->coins->coincheck -= 1;
-			ft_printf("Coins left: %d\n", data->coins->coincheck);
-		}
 		data->map[data->player->y][data->player->x] = '0';
 		data->map[data->player->y][data->player->x - 1] = 'P';
 		data->player->x -= 1;
@@ -57,10 +51,7 @@ static void	move_up(t_data *data)
 	if (data->map[data->player->y - 1][data->player->x] != '1')
 	{
 		if (data->map[data->player->y - 1][data->player->x] == 'C')
-		{
 			data->coins->coincheck -= 1;
-			ft_printf("Coins left: %d\n", data->coins->coincheck);
-		}
 		data->map[data->player->y][data->player->x] = '0';
 		data->map[data->player->y - 1][data->player->x] = 'P';
 		data->player->y -= 1;
@@ -77,10 +68,7 @@ static void	move_down(t_data *data)
 	if (data->map[data->player->y + 1][data->player->x] != '1')
 	{
 		if (data->map[data->player->y + 1][data->player->x] == 'C')
-		{
 			data->coins->coincheck -= 1;
-			ft_printf("Coins left: %d\n", data->coins->coincheck);
-		}
 		data->map[data->player->y][data->player->x] = '0';
 		data->map[data->player->y + 1][data->player->x] = 'P';
 		data->player->y += 1;
@@ -102,8 +90,6 @@ int	key_hook(int keycode, t_data *data)
 		move_down(data);
 	if (keycode == LEFT || keycode == 97 || keycode == 104)
 		move_left(data);
-	if (keycode == 114)
-		reset_game(data);
 	if (keycode == 65307)
 		annihilate(data, "Exit Game\n", 1);
 	exit_check(data);

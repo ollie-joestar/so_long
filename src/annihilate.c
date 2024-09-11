@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:04:33 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 10:45:18 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:20:26 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,7 @@ void	annihilate(t_data *data, char *message, int errno)
 			mlx_destroy_window(data->mlx, data->win);
 		}
 		if (data->mlx)
-			mlx_destroy_display(data->mlx);
-		free(data->mlx);
+			(mlx_destroy_display(data->mlx), free(data->mlx));
 		ft_freecarr(data->map);
 	}
 	free(data);

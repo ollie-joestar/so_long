@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:46:20 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 14:02:15 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:24:12 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ void	exit_check(t_data *data)
 	}
 }
 
-void	reset_game(t_data *data)
-{
-	ft_printf("GAME RESET...\n...\n...\n...\n");
-	free(data->map);
-	load_map(data);
-	get_coins(data);
-	get_positions(data);
-	exit_check(data);
-	data->player->dir = 'd';
-}
-
+/*void	reset_game(t_data *data)*/
+/*{*/
+/*	ft_printf("GAME RESET...\n...\n...\n...\n");*/
+/*	free(data->map);*/
+/*	load_map(data);*/
+/*	get_coins(data);*/
+/*	get_positions(data);*/
+/*	exit_check(data);*/
+/*	data->player->dir = 'd';*/
+/*}*/
+/**/
 void	good_game(t_data *data)
 {
 	annihilate(data, "\n\n\n			!!! YOU WON !!!\n\n\n", 0);

@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 16:04:51 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 12:18:56 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:23:32 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ typedef struct s_player
 
 typedef struct s_data
 {
-	int			*errno;
+	int			errno;
 	void		*mlx;
 	int			width;
 	int			height;
@@ -131,7 +131,7 @@ size_t	ft_arrlen(char	**arr);
 int		find_char(char *s, char c);
 void	ft_freecarr(char **arr);
 void	exit_check(t_data *data);
-void	reset_game(t_data *data);
+/*void	reset_game(t_data *data);*/
 void	good_game(t_data *data);
 void	game_over(t_data *data);
 int		update_game(t_data *data);

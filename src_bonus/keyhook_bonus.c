@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 15:45:19 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 14:02:16 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:27:16 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,6 @@ int	key_hook(int keycode, t_data *data)
 		move_down(data);
 	if (keycode == LEFT || keycode == 97 || keycode == 104)
 		move_left(data);
-	if (keycode == 114)
-		reset_game(data);
 	if (keycode == 65307)
 		annihilate(data, "Exit Game\n", 1);
 	exit_check(data);

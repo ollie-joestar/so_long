@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:46:20 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 10:46:08 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:22:47 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ void	exit_check(t_data *data)
 			data->map[data->biome->y][data->biome->x] = 'e';
 	}
 }
-
-void	reset_game(t_data *data)
-{
-	ft_printf("GAME RESET...\n...\n...\n...\n");
-	free(data->map);
-	load_map(data);
-	get_coins(data);
-	get_positions(data);
-	exit_check(data);
-	data->player->dir = 'd';
-}
+/**/
+/*void	reset_game(t_data *data)*/
+/*{*/
+/*	ft_printf("GAME RESET...\n...\n...\n...\n");*/
+/*	free(data->map);*/
+/*	load_map(data);*/
+/*	get_coins(data);*/
+/*	get_positions(data);*/
+/*	exit_check(data);*/
+/*	data->player->dir = 'd';*/
+/*}*/
 
 void	good_game(t_data *data)
 {
