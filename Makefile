@@ -6,14 +6,14 @@
 #    By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/11 12:47:33 by oohnivch          #+#    #+#              #
-#    Updated: 2024/09/11 14:29:05 by oohnivch         ###   ########.fr        #
+#    Updated: 2024/09/11 15:39:17 by oohnivch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #									Variables								   #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 MLXFLAGS = -lXext -lmlx -lX11
 HEADER = -I./includes
 HEADER_BONUS = -I./includes_bonus/

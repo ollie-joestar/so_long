@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:31 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 12:00:41 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:31:20 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char	*get_next_line(int fd, int *errno)
 		if (bytes != 0)
 			buffer = ft_buffjoin(&buffer, &content);
 		if (!buffer)
-			return (*errno = -1, ft_free(&content), NULL);
+				return (*errno = 0, ft_free(&content), NULL);
 	}
 	ft_free(&content);
 	content = ft_parseline(&buffer, errno);

@@ -6,7 +6,7 @@
 /*   By: oohnivch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 16:03:33 by oohnivch          #+#    #+#             */
-/*   Updated: 2024/09/11 10:50:32 by oohnivch         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:41:29 by oohnivch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	initiate(t_data *data)
 {
 	char	*cmove;
 
-	data->time = 0;
 	init_player(data);
 	init_biome(data);
 	init_coins(data);
